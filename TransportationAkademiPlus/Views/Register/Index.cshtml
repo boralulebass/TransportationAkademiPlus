@@ -1,0 +1,20 @@
+﻿@model TransportationAkademiPlus.Models.TblAdmin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kayıt</h2>
+<form method="post">
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Rolü</label>
+    @Html.TextBoxFor(x => x.Adminrole, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

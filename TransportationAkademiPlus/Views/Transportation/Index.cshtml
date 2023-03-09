@@ -1,0 +1,55 @@
+﻿@model PagedList.IPagedList<TblTransportation>
+@using PagedList
+@using PagedList.Mvc
+@using TransportationAkademiPlus.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<h2>Kargo Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Müşteri Adı Soyadı</th>
+        <th>Kategori</th>
+        <th>Ürün Adı</th>
+        <th>İlgili Çalışan</th>
+        <th>Durum</th>
+        <th>Çıkış Noktası</th>
+        <th>Varış Noktası</th>
+        <th>Tarih</th>
+        <th>Açıklama</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var parca in Model)
+    {
+        <tr>
+            <td>@parca.TransportationID</td>
+            <td>@parca.TblCustomer.CustomerName @parca.TblCustomer.CustomerSurname</td>
+            <td>@parca.TblCategory.CategoryName</td>
+            <td>@parca.TblProduct.ProductName</td>
+            <td>@parca.TblEmployee.EmployeeName</td>
+            <td>@parca.TblProcess.Description</td>
+            <td>@parca.Departure</td>
+            <td>@parca.Arrival</td>
+            <td>@parca.Date</td>
+            <td>@parca.Description</td>
+            <td><a href="/Transportation/DeleteTransportation/@parca.TransportationID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Transportation/UpdateTransportation/@parca.TransportationID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<a href="/Transportation/AddTransportation/" class="btn btn-primary">Yeni Kargo Girişi</a>
+<br />
+<br />
+<br />
+
+

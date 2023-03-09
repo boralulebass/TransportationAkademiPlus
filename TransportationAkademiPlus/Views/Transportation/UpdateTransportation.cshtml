@@ -1,0 +1,41 @@
+﻿@model TransportationAkademiPlus.Models.TblTransportation
+@{
+    ViewBag.Title = "UpdateTransportation";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<h2>Kargo Verileri Güncelleme</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.TransportationID)
+    <label>Müşteri</label>
+    @Html.DropDownListFor(x => x.Customer, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+    <br />
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.Category, (List<SelectListItem>)ViewBag.p, new { @class = "form-control" })
+    <br />
+    <label>Ürün Adı</label>
+    @Html.DropDownListFor(x => x.Product, (List<SelectListItem>)ViewBag.p2, new { @class = "form-control" })
+    <br />
+    <label>İlgili Çalışan</label>
+    @Html.DropDownListFor(x => x.Employee, (List<SelectListItem>)ViewBag.p3, new { @class = "form-control" })
+    <br />
+    <label>Durum</label>
+    @Html.DropDownListFor(x => x.Status, (List<SelectListItem>)ViewBag.p4, new { @class = "form-control" })
+    <br />
+    <label>Çıkış Noktası</label>
+    @Html.TextBoxFor(x => x.Departure, new { @class = "form-control" })
+    <br />
+    <label>Varış Noktası</label>
+    @Html.TextBoxFor(x => x.Arrival, new { @class = "form-control" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Departure, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kargo Verilerini Kaydet</button>
+    <br />
+    <br />
+</form>

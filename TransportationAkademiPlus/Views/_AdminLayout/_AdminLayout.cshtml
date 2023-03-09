@@ -1,0 +1,211 @@
+﻿@using TransportationAkademiPlus.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Paneli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <img src="~/AdminLTE-3.0.4/dist/img/iconnpng.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"  style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin Paneli</span>
+            </a>            
+            <div class="sidebar">
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/Category/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Kategoriler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Customer/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-shopping-bag"></i>
+                                <p>
+                                    Müşteriler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Employee/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-person-booth"></i>
+                                <p>
+                                    Personeller
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Product/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                    Ürünler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Transportation/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-truck-moving"></i>
+                                <p>
+                                    Kargo İşlemleri
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Profile/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-user-circle"></i>
+                                <p>
+                                    Profil
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Settings/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-user-plus"></i>
+                                <p>
+                                    Ayarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Register/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-plus-square"></i>
+                                <p>
+                                    Yeni Kayıt
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Login/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-outdent"></i>
+                                <p>
+                                    Çıkış Yap
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div style="background-color:white" class="content-wrapper">
+                <div class="content">
+                    <section class="control-sidebar-content">
+                        <div class="container">
+                            <div class="row mb-6">
+                                <div class="col-sm-12">
+                                    <br />
+                                    <section class="content-1-info">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-lg-3 col-6">
+                                                    <div class="small-box bg-info">
+                                                        <div class="inner">
+                                                            <h3>@Html.Action("Siparis", "_AdminLayout")</h3>
+
+                                                            <p>Toplam Siparişler</p>
+                                                        </div>
+                                                        <div class="icon">
+                                                            <i class="ion ion-bag"></i>
+                                                        </div>
+                                                        <a href="/Transportation/Index/" class="small-box-footer">Daha Fazla Bilgi <i class="fas fa-arrow-circle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-6">
+                                                    <div class="small-box bg-success">
+                                                        <div class="inner">
+                                                            <h3>@Html.Action("Musteri", "_AdminLayout")</h3>
+
+                                                            <p>Toplam Müşteri</p>
+                                                        </div>
+                                                        <div class="icon">
+                                                            <i class="ion ion-stats-bars"></i>
+                                                        </div>
+                                                        <a href="/Customer/Index/" class="small-box-footer">Daha Fazla Bilgi <i class="fas fa-arrow-circle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-6">
+                                                    <div class="small-box bg-warning">
+                                                        <div class="inner">
+                                                            <h3>@Html.Action("Islem", "_AdminLayout")</h3>
+
+                                                            <p>Yoldaki Siparişler</p>
+                                                        </div>
+                                                        <div class="icon">
+                                                            <i class="ion ion-bag"></i>
+                                                        </div>
+                                                        <a href="/Transportation/Index/" class="small-box-footer">Daha Fazla Bilgi <i class="fas fa-arrow-circle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-6">
+                                                    <div class="small-box bg-danger">
+                                                        <div class="inner">
+                                                            <h3>@Html.Action("Calisan", "_AdminLayout")</h3>
+
+                                                            <p>Çalışan Sayısı</p>
+                                                        </div>
+                                                        <div class="icon">
+                                                            <i class="ion ion-person-add"></i>
+                                                        </div>
+                                                        <a href="/Employee/Index/" class="small-box-footer">Daha Fazla Bilgi <i class="fas fa-arrow-circle-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    @RenderBody()
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+        </div>
+    </div>
+    <script src="/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <script src="/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/sparklines/sparkline.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/moment/moment.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="/AdminLTE-3.0.4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <script src="/AdminLTE-3.0.4/dist/js/pages/dashboard.js"></script>
+    <script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>

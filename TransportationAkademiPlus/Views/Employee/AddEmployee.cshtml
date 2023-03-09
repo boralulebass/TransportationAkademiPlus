@@ -1,0 +1,37 @@
+﻿@model TransportationAkademiPlus.Models.TblEmployee
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Personel Kaydı</h2>
+
+<form method="post">
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    <label>Personel Görsel Url</label>
+    @Html.TextBoxFor(x => x.Employeeimage, new { @class = "form-control" })
+    <br />
+    <label>Görev Tanımı</label>
+    @Html.TextBoxFor(x => x.EmployeeDescription, new { @class = "form-control" })
+    <br />
+    <label>Adres</label>
+    @Html.TextBoxFor(x => x.EmployeeLocation, new { @class = "form-control" })
+    <br />
+    <label>Eğitim</label>
+    @Html.TextBoxFor(x => x.EmployeeEducation, new { @class = "form-control" })
+    <br />
+    <label>Beceriler</label>
+    @Html.TextBoxFor(x => x.EmployeeSkills, new { @class = "form-control" })
+    <br />
+    <label>Mail Adresi</label>
+    @Html.TextBoxFor(x => x.EmployeeMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Personel Ekle</button>
+    <br />
+    <br />
+</form>

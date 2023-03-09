@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<TblEmployee>
+@using PagedList
+@using PagedList.Mvc
+@using TransportationAkademiPlus.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+<h2>Personel Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Görsel</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Görev Tanımı</th>
+        <th>E-Mail</th>
+        <th>Beceriler</th>
+        <th>Adres</th>
+        <th>Eğitim</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeID</td>
+            <td><img src="@item.Employeeimage" style="width:80px; height:50px;" /></td>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeSurname</td>
+            <td>@item.EmployeeDescription</td>
+            <td>@item.EmployeeMail</td>
+            <td>@item.EmployeeSkills</td>
+            <td>@item.EmployeeLocation</td>
+            <td>@item.EmployeeEducation</td>
+            <td><a href="/Employee/DeleteEmployee/@item.EmployeeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Employee/UpdateEmployee/@item.EmployeeID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<a href="/Employee/AddEmployee/" class="btn btn-primary">Yeni Personel Kaydı</a>
+<br />
+<br />
+<br />
